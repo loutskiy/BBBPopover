@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-OY-Ueo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9e-jR-MMi">
+                                <rect key="frame" x="128.5" y="313" width="118" height="41"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Seh-Xq-2lY">
+                                    <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0L-Ku-fiL">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
+                                            <state key="normal" title="Open Popover">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="openPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tXQ-4T-Pv6"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="s0L-Ku-fiL" secondAttribute="bottom" id="5D0-Ks-OJs"/>
+                                        <constraint firstItem="s0L-Ku-fiL" firstAttribute="leading" secondItem="Seh-Xq-2lY" secondAttribute="leading" id="L9s-1f-wdd"/>
+                                        <constraint firstAttribute="trailing" secondItem="s0L-Ku-fiL" secondAttribute="trailing" id="NJO-aj-25f"/>
+                                        <constraint firstItem="s0L-Ku-fiL" firstAttribute="top" secondItem="Seh-Xq-2lY" secondAttribute="top" id="Sqt-gA-pHQ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="5of-UM-zhi"/>
+                                    <constraint firstAttribute="height" constant="41" id="PM4-Cg-Dpa"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fve-OY-Ueo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ATa-0c-gn0"/>
+                            <constraint firstItem="J9e-jR-MMi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bUa-Oy-aXB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fve-OY-Ueo" secondAttribute="bottom" id="nNo-PE-v23"/>
+                            <constraint firstAttribute="trailing" secondItem="Fve-OY-Ueo" secondAttribute="trailing" id="nhj-iN-GOU"/>
+                            <constraint firstItem="Fve-OY-Ueo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vCY-Bs-vgy"/>
+                            <constraint firstItem="J9e-jR-MMi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x3i-KT-QtJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="Fve-OY-Ueo" id="EgO-WO-waQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banner" width="1680" height="1555"/>
+    </resources>
+</document>
