@@ -26,6 +26,7 @@
 }
 
 - (void) setBlur {
+    NSLog(@"setBlur");
     self.backgroundColor = [UIColor clearColor];
     UIVisualEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
@@ -49,14 +50,15 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
-    panBegan = [touch locationInView:self];
+    panBegan = [touch locationInView:self.currentViewFromVC];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     if ([touch view] == self.popoverTopView) {
-        CGPoint newCoord = [touch locationInView:self];
+        CGPoint newCoord = [touch locationInView:self.currentViewFromVC];
         if (newCoord.y > panBegan.y - 10) {
+            //NSLog(@"newCoord %f panCoord %f", newCoord.y, panBegan.y);
             float dY = newCoord.y-panBegan.y;
             self.frame = CGRectMake(self.frame.origin.x, 28 + dY, self.frame.size.width, self.frame.size.height);
         }
@@ -67,7 +69,7 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     if ([touch view] == self.popoverTopView) {
-        CGPoint newCoord = [touch locationInView:self];
+        CGPoint newCoord = [touch locationInView:self.currentViewFromVC];
         if (newCoord.y - panBegan.y > 100) {
             [[BBBPopoverControll alloc] hideModal:self];
         } else {

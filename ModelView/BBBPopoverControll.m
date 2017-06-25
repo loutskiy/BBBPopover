@@ -16,6 +16,7 @@
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
 
     BBBPopover *modalView = [[BBBPopover alloc] initWithFrame:CGRectMake(0, 28, width, height)];
+    modalView.currentViewFromVC = view;
     [modalView.popoverTopView setNameText:@"Panasonic TV"];
     CGPoint middleCenter;
     middleCenter = CGPointMake(modalView.center.x, modalView.center.y);

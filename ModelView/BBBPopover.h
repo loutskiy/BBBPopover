@@ -13,5 +13,6 @@
 @interface BBBPopover : UIView
 
 @property (nonatomic, strong) BBBPopoverTopView *popoverTopView;
+@property (nonatomic, strong) UIView *currentViewFromVC;
 
 @end
