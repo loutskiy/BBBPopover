@@ -17,7 +17,9 @@
 		534C116A1EFECD6F000648BD /* BBBPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C11691EFECD6F000648BD /* BBBPopover.m */; };
 		534C116C1EFED845000648BD /* BBBPopoverTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534C116B1EFED845000648BD /* BBBPopoverTopView.xib */; };
 		534C116F1EFED857000648BD /* BBBPopoverTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C116E1EFED857000648BD /* BBBPopoverTopView.m */; };
-		534C11721EFF05A2000648BD /* BBBPopoverControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C11711EFF05A2000648BD /* BBBPopoverControll.m */; };
+		534C11721EFF05A2000648BD /* BBBPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C11711EFF05A2000648BD /* BBBPopoverView.m */; };
+		5358BFE91EFFBECE00C0B698 /* BBBPopoverButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5358BFE81EFFBECE00C0B698 /* BBBPopoverButton.m */; };
+		5358BFEF1F005FEF00C0B698 /* BBBPopoverUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5358BFEE1F005FEF00C0B698 /* BBBPopoverUIButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +39,12 @@
 		534C116B1EFED845000648BD /* BBBPopoverTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBBPopoverTopView.xib; sourceTree = "<group>"; };
 		534C116D1EFED857000648BD /* BBBPopoverTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBPopoverTopView.h; sourceTree = "<group>"; };
 		534C116E1EFED857000648BD /* BBBPopoverTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBPopoverTopView.m; sourceTree = "<group>"; };
-		534C11701EFF05A2000648BD /* BBBPopoverControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBPopoverControll.h; sourceTree = "<group>"; };
-		534C11711EFF05A2000648BD /* BBBPopoverControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBPopoverControll.m; sourceTree = "<group>"; };
+		534C11701EFF05A2000648BD /* BBBPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBPopoverView.h; sourceTree = "<group>"; };
+		534C11711EFF05A2000648BD /* BBBPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBPopoverView.m; sourceTree = "<group>"; };
+		5358BFE71EFFBECE00C0B698 /* BBBPopoverButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBPopoverButton.h; sourceTree = "<group>"; };
+		5358BFE81EFFBECE00C0B698 /* BBBPopoverButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBPopoverButton.m; sourceTree = "<group>"; };
+		5358BFED1F005FEF00C0B698 /* BBBPopoverUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBPopoverUIButton.h; sourceTree = "<group>"; };
+		5358BFEE1F005FEF00C0B698 /* BBBPopoverUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBPopoverUIButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +96,12 @@
 				534C116D1EFED857000648BD /* BBBPopoverTopView.h */,
 				534C116E1EFED857000648BD /* BBBPopoverTopView.m */,
 				534C116B1EFED845000648BD /* BBBPopoverTopView.xib */,
-				534C11701EFF05A2000648BD /* BBBPopoverControll.h */,
-				534C11711EFF05A2000648BD /* BBBPopoverControll.m */,
+				534C11701EFF05A2000648BD /* BBBPopoverView.h */,
+				534C11711EFF05A2000648BD /* BBBPopoverView.m */,
+				5358BFE71EFFBECE00C0B698 /* BBBPopoverButton.h */,
+				5358BFE81EFFBECE00C0B698 /* BBBPopoverButton.m */,
+				5358BFED1F005FEF00C0B698 /* BBBPopoverUIButton.h */,
+				5358BFEE1F005FEF00C0B698 /* BBBPopoverUIButton.m */,
 				534C11561EFE7C6A000648BD /* Main.storyboard */,
 				534C11591EFE7C6A000648BD /* Assets.xcassets */,
 				534C115B1EFE7C6A000648BD /* LaunchScreen.storyboard */,
@@ -184,11 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				534C116A1EFECD6F000648BD /* BBBPopover.m in Sources */,
-				534C11721EFF05A2000648BD /* BBBPopoverControll.m in Sources */,
+				534C11721EFF05A2000648BD /* BBBPopoverView.m in Sources */,
 				534C11551EFE7C6A000648BD /* ViewController.m in Sources */,
+				5358BFEF1F005FEF00C0B698 /* BBBPopoverUIButton.m in Sources */,
 				534C11521EFE7C6A000648BD /* AppDelegate.m in Sources */,
 				534C116F1EFED857000648BD /* BBBPopoverTopView.m in Sources */,
 				534C114F1EFE7C6A000648BD /* main.m in Sources */,
+				5358BFE91EFFBECE00C0B698 /* BBBPopoverButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

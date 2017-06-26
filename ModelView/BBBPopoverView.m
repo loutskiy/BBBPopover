@@ -1,15 +1,24 @@
 //
-//  BBBPopoverControll.m
+//  BBBPopoverView.m
 //  BBBPopover
 //
-//  Created by Михаил Луцкий on 24.06.17.
-//  Copyright © 2017 BigBadDird. All rights reserved.
+//  Created by Mikhail Lutskii on 24.06.17.
+//  Copyright © 2017 BigBadBird.ru. All rights reserved.
 //
 
-#import "BBBPopoverControll.h"
+#import "BBBPopoverView.h"
 #import "BBBPopover.h"
 
-@implementation BBBPopoverControll
+@implementation BBBPopoverView
+
++ (id)sharedManager {
+    static BBBPopoverView *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
 
 - (void) showModalOn:(UIView *)view {
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
@@ -17,7 +26,10 @@
 
     BBBPopover *modalView = [[BBBPopover alloc] initWithFrame:CGRectMake(0, 28, width, height)];
     modalView.currentViewFromVC = view;
-    [modalView.popoverTopView setNameText:@"Panasonic TV"];
+    [modalView.popoverTopView setNameText:_popoverTitle];
+    [modalView.popoverTopView setButtons:_popoverTopButtons];
+    [modalView addContentToPopover:_popoverContent];
+    
     CGPoint middleCenter;
     middleCenter = CGPointMake(modalView.center.x, modalView.center.y);
     
@@ -52,7 +64,6 @@
 }
 
 - (void) hideModalEnded:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-    
     UIView *modalView = (__bridge UIView *)context;
     [modalView removeFromSuperview];
 }

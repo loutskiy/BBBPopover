@@ -2,8 +2,8 @@
 //  BBBPopover.m
 //  BBBPopover
 //
-//  Created by Михаил Луцкий on 24.06.17.
-//  Copyright © 2017 BigBadDird. All rights reserved.
+//  Created by Mikhail Lutskii on 24.06.17.
+//  Copyright © 2017 BigBadBird.ru. All rights reserved.
 //
 
 #import "BBBPopover.h"
@@ -21,12 +21,12 @@
     if (self) {
         [self setBlur];
         [self setPopoverTop];
+        [self setContentUIView];
     }
     return self;
 }
 
 - (void) setBlur {
-    NSLog(@"setBlur");
     self.backgroundColor = [UIColor clearColor];
     UIVisualEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
@@ -48,6 +48,11 @@
     [self addSubview:self.popoverTopView];
 }
 
+- (void) setContentUIView {
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(16, 62, self.frame.size.width-32, self.frame.size.height-62)];
+    [self addSubview:_contentView];
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     panBegan = [touch locationInView:self.currentViewFromVC];
@@ -58,7 +63,6 @@
     if ([touch view] == self.popoverTopView) {
         CGPoint newCoord = [touch locationInView:self.currentViewFromVC];
         if (newCoord.y > panBegan.y - 10) {
-            //NSLog(@"newCoord %f panCoord %f", newCoord.y, panBegan.y);
             float dY = newCoord.y-panBegan.y;
             self.frame = CGRectMake(self.frame.origin.x, 28 + dY, self.frame.size.width, self.frame.size.height);
         }
@@ -71,7 +75,7 @@
     if ([touch view] == self.popoverTopView) {
         CGPoint newCoord = [touch locationInView:self.currentViewFromVC];
         if (newCoord.y - panBegan.y > 100) {
-            [[BBBPopoverControll alloc] hideModal:self];
+            [[BBBPopoverView alloc] hideModal:self];
         } else {
             self.frame = CGRectMake(self.frame.origin.x, 28 , self.frame.size.width, self.frame.size.height);
         }
@@ -80,7 +84,11 @@
 }
 
 - (void)didTapCloseButton {
-    [[BBBPopoverControll alloc] hideModal:self];
+    [[BBBPopoverView alloc] hideModal:self];
+}
+
+- (void)addContentToPopover:(id)contentView {
+    [_contentView addSubview:contentView];
 }
 
 @end
